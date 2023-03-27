@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <table>
+                    <thead>
+                        <tr>
+                            <th>Company Name</th>
+                            <th>Stock Symbol</th>
+                            <th>Share Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- TODO: Loop through the database entries to display them in this table -->
+
+                            <tr>
+                                <td style="width: 150px">{{ stock.name }}</td>
+                                <td style="width: 150px">{{ stock.symbol }} </td>
+                                <td style="width: 150px">{{ stock.price|usd }} </td>
+                            </tr>
+
+                    </tbody>
+                </table>
+{% endblock %}

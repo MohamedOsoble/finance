@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <table>
+                    <thead>
+                        <tr>
+                            <th>Share Name</th>
+                            <th>Shares</th>
+                            <th>Transaction Type</th>
+                            <th>Price</th>
+                            <th>Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for transaction in transactions|reverse %}
+                            <tr>
+                                <td style="width: 150px"> {{ transaction.stockid }} </td>
+                                <td style="width: 150px"> {{ transaction.quantity }} </td>
+                                <td style="width: 150px"> {{ transaction.type }} </td>
+                                <td style="width: 150px"> ${{ "%.2f"|format(transaction.value) }} </td>
+                                <td style="width: 150px"> {{ transaction.time }} </td>
+                            </tr>
+
+                        {% endfor %}
+
+                    </tbody>
+                </table>
+{% endblock %}
